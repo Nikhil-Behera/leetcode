@@ -1,3 +1,1 @@
-this is my 1st project.
-
-lol haha
+This is my first repository created through git.  
