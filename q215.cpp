@@ -5,6 +5,7 @@ Note that it is the kth largest element in the sorted order, not the kth distinc
 Can you solve it without sorting?*/
 #include<iostream>
 #include<algorithm>
+#include<queue>
 #include<vector>
 using namespace std;
 class Solution {
@@ -16,5 +17,15 @@ public:
             p++;
         }
         return nums[--p];
+
+        priority_queue<int> pq;
+        for(int i=0;i<nums.size();i++){
+            pq.push(nums[i]);
+        }
+
+       for(int i=1;i<k;i++){
+        pq.pop();
+       }
+       return pq.top();
     }
 };
