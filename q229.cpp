@@ -1,5 +1,6 @@
 /*Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.*/
 #include<iostream>
+#include<unordered_map>
 #include<vector>
 #include<algorithm>
 using namespace std;
@@ -8,29 +9,17 @@ public:
     vector<int> majorityElement(vector<int>& nums) {
         if(nums.size()==1) return nums;
         int n=nums.size();
-        int count =0;
-
-        // int max=0;
-        // for(int i=0;i<n;i++){
-        //     if(nums[i]>nums[max]){
-        //         max=i;
-        //     }
-        // }
-        // vector<int> arr={max,0};
-        int maxVal = *max_element(nums.begin(), nums.end());
-        vector<int> arr(maxVal + 1, 0);
-
-        for(int i=0;i<n;i++){
-            arr[nums[i]] = arr[nums[i]] +1;
+        unordered_map<int,int> mp;
+        for(auto it : nums){
+            mp[it]++;
         }
-
-        vector<int> res;
-        for(int i=1;i<=n;i++){
-            if(arr[i] > n/3){
-                res.push_back(i);
+        
+        vector<int> ans;
+        for(auto it : mp){
+            if(it.second > n/3){
+                ans.push_back(it.first);
             }
         }
-
-        return res;
+        return ans;
     }
 };
