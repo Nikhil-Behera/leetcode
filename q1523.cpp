@@ -6,11 +6,9 @@ using namespace std;
 class Solution {
 public:
     int countOdds(int low, int high) {
-        int ans = 0;
-        while(low <= high){
-            if(low%2 != 0) ans++;
-            low++; 
-        }
-        return ans;
+        int ans=0;
+        if(low%2!=0 && high%2!=0) ans = high-low+2;
+        else ans = high - low +1;
+        return ans/2;
     }
 };
