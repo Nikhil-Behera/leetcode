@@ -22,8 +22,27 @@ public:
         }
 
         queue<int> q;
-        int m = students.size();
         
+        for(int i=0;i<n;i++){
+            q.push(students[i]);
+        }
+
+        int count = 0;
+        while(!st.empty()){
+            if(st.top() == q.front()){
+                st.pop();
+                q.pop();
+                if(count!=0) count=0;
+            }
+            else if(st.top() != q.front()){
+                auto temp = q.front();
+                q.pop();
+                q.push(temp);
+                count++;
+            }
+            if(count == q.size()) break;
+        }
+        return q.size();
 
     }
 };
