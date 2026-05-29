@@ -5,7 +5,9 @@ Define its mirror distance as: abs(n - reverse(n))​​​​​​​ where re
 Return an integer denoting the mirror distance of n​​​​​​​.
 
 abs(x) denotes the absolute value of x.*/
-#include<bits/stdc++>
+#include<iostream>
+#include<vector>
+#include<algorithm>
 using namespace std;
 class Solution {
 public:
