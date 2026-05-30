@@ -3,7 +3,7 @@
 You replace each element in nums with the sum of its digits.
 
 Return the minimum element in nums after all replacements.*/
-#include<iostream>
+// #include<iostream>
 #include<vector>
 #include<algorithm>
 using namespace std;
